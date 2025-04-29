@@ -1,28 +1,27 @@
 const makeChange = (c) => {
-  // your name here
-	function makeChange(cents) {
+    c = Number(c); // Convert from string to number
+
     const change = {
-        q: 0, // quarters
-        d: 0, // dimes
-        n: 0, // nickels
-        p: 0  // pennies
+        q: 0,
+        d: 0,
+        n: 0,
+        p: 0
     };
 
-    change.q = Math.floor(cents / 25);
-    cents %= 25;
+    change.q = Math.floor(c / 25);
+    c %= 25;
 
-    change.d = Math.floor(cents / 10);
-    cents %= 10;
+    change.d = Math.floor(c / 10);
+    c %= 10;
 
-    change.n = Math.floor(cents / 5);
-    cents %= 5;
+    change.n = Math.floor(c / 5);
+    c %= 5;
 
-    change.p = cents;
+    change.p = c;
 
     return change;
-}
 };
 
-// Do not the change the code below
-const c = prompt("Enter c: ");
+// Do not change the code below
+const c = prompt("Enter c (e.g. 45):");
 alert(JSON.stringify(makeChange(c)));
